@@ -5,11 +5,16 @@ on:
     branches:
       - main  # Change this if your branch is different
 
+permissions:  
+  contents: read
+  pages: write  
+  id-token: write  # ✅ Required for OIDC authentication
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages  # ✅ Required for GitHub Pages
+      name: github-pages  # ✅ Ensure this is included
 
     steps:
       - name: Checkout repository
