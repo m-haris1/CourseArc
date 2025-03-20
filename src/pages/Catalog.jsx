@@ -28,7 +28,7 @@ function Catalog() {
         )[0]._id
         setCategoryId(category_id)
       } catch (error) {
-        // console.log("Could not fetch Categories.", error)
+        console.log("Could not fetch Categories.", error)
       }
     })()
   }, [catalogName])
@@ -41,7 +41,7 @@ function Catalog() {
           // console.log(categoryId)
           // console.log(res)
         } catch (error) {
-          // console.log(error)
+          console.log(error)
         }
       })()
     }

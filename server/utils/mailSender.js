@@ -20,10 +20,10 @@ const mailSender = async (email, title, body) => {
       subject: `${title}`, // Subject line
       html: `${body}`, // html body
     })
-    console.log(info.response)
+    // console.log(info.response)
     return info
   } catch (error) {
-    console.log(error.message)
+    // console.log(error.message)
     return error.message
   }
 }

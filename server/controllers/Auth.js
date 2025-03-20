@@ -60,7 +60,7 @@ exports.signup = async (req, res) => {
 
     // ! Jab tak mailsender kaam nahi karega , tb tak resoponse ko log karwana hi padega
     {
-      console.log(response)
+      // console.log(response)
     }
     
     if (response.length === 0) {
@@ -208,9 +208,9 @@ exports.sendotp = async (req, res) => {
       specialChars: false,
     })
     const result = await OTP.findOne({ otp: otp })
-    console.log("Result is Generate OTP Func")
-    console.log("OTP", otp)
-    console.log("Result", result)
+    // console.log("Result is Generate OTP Func")
+    // console.log("OTP", otp)
+    // console.log("Result", result)
     while (result) {
       otp = otpGenerator.generate(6, {
         upperCaseAlphabets: false,
@@ -269,7 +269,7 @@ exports.changePassword = async (req, res) => {
           `Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`
         )
       )
-      console.log("Email sent successfully:", emailResponse.response)
+      // console.log("Email sent successfully:", emailResponse.response)
     } catch (error) {
       // If there's an error sending the email, log the error and return a 500 (Internal Server Error) error
       console.error("Error occurred while sending email:", error)

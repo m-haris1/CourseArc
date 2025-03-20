@@ -82,10 +82,10 @@ const userSocketMap = {};
 const rooms = {}; 
 
 io.on("connection", (socket) => {
-  console.log("Socket Connected", socket.id);
+  // console.log("Socket Connected", socket.id);
 
   socket.on("StreamKey", (streamKey) => {
-    console.log("Received Stream Key:", streamKey);
+    // console.log("Received Stream Key:", streamKey);
 
     // Kill any existing FFmpeg process before starting a new one
     if (ffmpeg) {
@@ -105,11 +105,11 @@ io.on("connection", (socket) => {
       `rtmp://a.rtmp.youtube.com/live2/${streamKey}`, // Your stream URL
     ]);
 
-    console.log("FFmpeg process started:", ffmpeg.pid);
+    // console.log("FFmpeg process started:", ffmpeg.pid);
 
     // Log any data received from FFmpeg stdout
     ffmpeg.stdout.on("data", (data) => {
-      console.log(`ffmpeg stdout: ${data}`);
+      // console.log(`ffmpeg stdout: ${data}`);
     });
 
     // Capture and log any FFmpeg error output
