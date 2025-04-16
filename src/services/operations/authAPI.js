@@ -23,9 +23,9 @@ export function sendOtp(email, navigate) {
         email,
         checkUserPresent: true,
       })
-      // console.log("SENDOTP API RESPONSE............", response)
+      console.log("SENDOTP API RESPONSE............", response)
 
-      // console.log(response.data.success)
+      console.log(response.data.success)
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -66,7 +66,7 @@ export function signUp(
         otp,
       })
 
-      // console.log("SIGNUP API RESPONSE............", response)
+      console.log("SIGNUP API RESPONSE............", response)
 
       if (!response.data.success) {
         throw new Error(response.data.message)

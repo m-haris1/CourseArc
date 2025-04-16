@@ -62,6 +62,7 @@ function SignupForm() {
 
     // Setting signup data to state
     // To be used after otp verification
+    console.log("Signup Data", signupData)
     dispatch(setSignupData(signupData))
     // Send OTP to user for verification
     dispatch(sendOtp(formData.email, navigate))

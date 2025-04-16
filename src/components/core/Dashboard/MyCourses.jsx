@@ -14,7 +14,7 @@ export default function MyCourses() {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const result = await fetchInstructorCourses(token)
+      const result = await fetchInstructorCourses?.(token)
       if (result) {
         setCourses(result)
       }

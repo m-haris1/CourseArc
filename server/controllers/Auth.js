@@ -12,7 +12,7 @@ require("dotenv").config()
 
 exports.signup = async (req, res) => {
   try {
-    
+    console.log("Request Body", req.body)
     const {
       firstName,
       lastName,
@@ -23,6 +23,7 @@ exports.signup = async (req, res) => {
       contactNumber,
       otp,
     } = req.body
+    console.log("Request Body", req.body)
     
     if (
       !firstName ||
@@ -60,7 +61,7 @@ exports.signup = async (req, res) => {
 
     // ! Jab tak mailsender kaam nahi karega , tb tak resoponse ko log karwana hi padega
     {
-      // console.log(response)
+      console.log(response)
     }
     
     if (response.length === 0) {
@@ -102,7 +103,7 @@ exports.signup = async (req, res) => {
       additionalDetails: profileDetails._id,
       image: "",
     })
-
+    console.log("User Created", user)
     return res.status(200).json({
       success: true,
       user,
