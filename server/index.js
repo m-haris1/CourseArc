@@ -20,7 +20,7 @@
 
   dotenv.config();
 
-  const PORT = process.env.REACT_APP_BASE_URL || 4000;
+  const PORT = process.env.PORT || 4000;
 
   // Create HTTP server
   const server = http.createServer(app);
@@ -39,7 +39,7 @@
   app.use(cookieParser());
   app.use(
     cors({
-      origin: "*", // Same here, change to restrict if needed
+      origin: "http://localhost:4000/api/v1", // Same here, change to restrict if needed
       credentials: true,
     })
   );
@@ -163,7 +163,7 @@ function getAllConnectedClients(roomId) {
         }
     );
 }
-function getAllUser(){
+function getAllUser(roomId){
   return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map(
     (socketId) => { return {
       username: userSocketMap[socketId],
