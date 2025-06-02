@@ -1,1 +1,1 @@
-Study Notion is a remarkable EdTech platform, developed with modern technologies.
+CourseArc is an EdTech platform.

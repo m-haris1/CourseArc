@@ -12,6 +12,7 @@ import {
     Navigate,
     useParams,
 } from 'react-router-dom';
+import Button from '../components/core/HomePage/Button';
 
 const EditorPage = () => {
     const socketRef = useRef(null);
@@ -82,6 +83,7 @@ const EditorPage = () => {
         try {
             await navigator.clipboard.writeText(roomId);
             toast.success('Room ID has been copied to your clipboard');
+            return
         } catch (err) {
             toast.error('Could not copy the Room ID');
             console.error(err);
@@ -149,12 +151,19 @@ const EditorPage = () => {
 
     {/* Buttons for Copying Room ID and Leaving */}
     <div className="flex flex-col gap-4 mt-auto">
-        <CTAButton onClick={copyRoomId} active={true} >
+    <div>
+        <button className="text-yellow-50 bg-gray-700 py-2 px-4 rounded-md hover:bg-gray-600"
+            onClick={copyRoomId}>
+            
             Copy ROOM ID
-        </CTAButton>
-        <CTAButton onClick={leaveRoom} active={true} >
-            Leave
-        </CTAButton>
+        </button>
+    </div>
+    <div>
+    <CTAButton linkto={"/"}>
+        Leave
+    </CTAButton>
+    </div>
+
     </div>
   </div>
 
