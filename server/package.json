@@ -5,12 +5,14 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
-		"dev": "nodemon index.js"
+		"dev": "nodemon index.js",
+		"heroku-postbuild": "cd ../client && npm install && npm run build"
+
 	},
 	"keywords": [
-		"studynotion-backend"
+		"CourseArc-backend"
 	],
-	"author": "Saikat Mukherjee",
+	"author": "Haris",
 	"license": "ISC",
 	"dependencies": {
 		"bcrypt": "^5.1.0",
